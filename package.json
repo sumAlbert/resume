@@ -1,0 +1,22 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "A resume for me",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumAlbert/resume.git"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "Albert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumAlbert/resume/issues"
+  },
+  "homepage": "https://github.com/sumAlbert/resume#readme"
+}
