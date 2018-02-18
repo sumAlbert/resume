@@ -1,4 +1,4 @@
-(function (wgit indow,undefined) {
+(function (window,undefined) {
     var $fullPage=function(viewPort_id,wrapper_id){
         return new $fullPage.prototype.create(viewPort_id,wrapper_id);
     };
