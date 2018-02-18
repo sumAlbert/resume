@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/sumAlbert/resume/issues"
   },
-  "homepage": "https://github.com/sumAlbert/resume#readme"
+  "homepage": "https://github.com/sumAlbert/resume#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.5.0"
+  },
+  "devDependencies": {
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0"
+  }
 }
