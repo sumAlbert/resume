@@ -7,11 +7,18 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: PingFang SC,Helvetica,Arial;
+  font-family: PingFang SC,Microsoft YaHei UI,Helvetica,Arial;
 }
 .main {
   height: 100%;
   width: 100%;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 .resume_page {
   position: relative;
@@ -27,12 +34,12 @@ body {
 }
 .resume_page1 {
   position: relative;
+  height: 100%;
+  width: 100%;
   background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(rgba(13, 13, 13, 0.7), rgba(13, 13, 13, 0.7)) center center no-repeat, url("../img/resume/page1_bg.jpeg") center center no-repeat;
   background-size: 100% 100%,cover;
 }
@@ -73,4 +80,550 @@ body {
 .resume_page1_space4 {
   width: 100%;
   flex: 180;
+}
+.resume_page2 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subPage2-Decorate1 {
+  font-size: 2vh;
+  background: rgba(253, 203, 12, 0.8);
+  border-radius: 50% 50%;
+  height: 15em;
+  width: 15em;
+  position: absolute;
+  bottom: -3.5em;
+  left: -2.5em;
+  z-index: 1;
+}
+.subPage2-Decorate2 {
+  font-size: 2vh;
+  background: #aaa;
+  border-radius: 50% 50%;
+  height: 15em;
+  width: 15em;
+  position: absolute;
+  bottom: 1.5em;
+  left: -7.5em;
+  z-index: 0;
+}
+.subPage2-Decorate3 {
+  font-size: 2vh;
+  background: #aaa;
+  border-radius: 50% 50%;
+  height: 10em;
+  width: 10em;
+  position: absolute;
+  top: -4.5em;
+  right: -5.5em;
+  z-index: 0;
+}
+.subPage2-Decorate4 {
+  font-size: 2vh;
+  background: rgba(253, 203, 12, 0.8);
+  border-radius: 50% 50%;
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  z-index: 0;
+}
+@media screen and (orientation: landscape) {
+  .resume_page2_content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 70%;
+    width: 80%;
+    max-width: 1200px;
+  }
+  .resume_page2_avatar {
+    position: relative;
+    margin: 2em 5em 1em 1em;
+    width: 17vw;
+    height: 17vw;
+    overflow: hidden;
+    max-height: 250px;
+    max-width: 250px;
+    border-radius: 50% 50%;
+    background: url("../img/resume/photo.png") center center no-repeat;
+    background-size: cover;
+  }
+  .resume_page2_info {
+    position: relative;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    color: #3a3a3a;
+  }
+  .resume_page2_line1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 6vh;
+  }
+  .resume_page2_name {
+    letter-spacing: 18px;
+    margin: 0 1em 0 0;
+  }
+  .resume_page2_occupation {
+    letter-spacing: 1px;
+  }
+  .resume_page2_line2 {
+    margin: 1em 0 0;
+    font-size: 4vh;
+    font-weight: normal;
+  }
+  .resume_page2_school {
+    margin: 0 1em 0 0;
+  }
+  .resume_page2_major {
+    margin: 0 0 0 1em;
+  }
+  .resume_page2_grade {
+    margin: 0 0 0 1.5em;
+  }
+  .resume_page3_line3 {
+    margin: 1em 0 0 0;
+    display: table;
+    font-size: 3.5vh;
+    font-weight: normal;
+  }
+  .resume_page3_goodAt {
+    display: table-cell;
+    width: 3.5em;
+  }
+  .resume_page3_goodAtItems {
+    display: table-cell;
+  }
+  .resume_page3_line4 {
+    margin: 1em 0 0 0;
+    display: table;
+    font-size: 3.5vh;
+    font-weight: normal;
+  }
+  .resume_page3_use {
+    display: table-cell;
+    width: 3.5em;
+  }
+  .resume_page3_useItems {
+    display: table-cell;
+  }
+  .resume_page3_line5 {
+    margin: 1em 0 0 0;
+    display: table;
+    font-size: 3.5vh;
+    font-weight: normal;
+    color: #707070;
+  }
+  .resume_page3_github {
+    display: table-cell;
+    width: 2.8em;
+    font-size: 125%;
+  }
+  .resume_page3_githubItems {
+    display: table-cell;
+  }
+  .resume_page3_line6 {
+    margin: 1em 0 0 0;
+    display: table;
+    font-size: 3.5vh;
+    font-weight: normal;
+    color: #707070;
+  }
+  .resume_page3_email {
+    display: table-cell;
+    width: 2.8em;
+    font-size: 125%;
+  }
+  .resume_page3_emailItems {
+    display: table-cell;
+  }
+  .resume_page3_line7 {
+    margin: 1em 0 0 0;
+    display: table;
+    font-size: 3.5vh;
+    font-weight: normal;
+    color: #707070;
+  }
+  .resume_page3_tel {
+    display: table-cell;
+    width: 2.8em;
+    font-size: 125%;
+  }
+  .resume_page3_telItems {
+    display: table-cell;
+  }
+}
+@media screen and (orientation: portrait) {
+  .resume_page2_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 85%;
+    width: 80%;
+    z-index: 2;
+  }
+  .resume_page2_avatar {
+    position: relative;
+    margin: 0 0 1em;
+    width: 17vh;
+    height: 17vh;
+    overflow: hidden;
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 50% 50%;
+    background: url("../img/resume/photo.png") center center no-repeat;
+    background-size: cover;
+  }
+  .resume_page2_info {
+    position: relative;
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    color: #3a3a3a;
+  }
+  .resume_page2_line1 {
+    margin: 0 auto;
+    font-weight: normal;
+    font-size: 5vh;
+    text-align: center;
+  }
+  .resume_page2_name {
+    letter-spacing: 18px;
+    margin: 0 1em 0 0;
+  }
+  .resume_page2_occupation {
+    letter-spacing: 1px;
+  }
+  .resume_page2_line2 {
+    margin: .5em 0 0;
+    font-size: 3vh;
+    font-weight: normal;
+  }
+  .resume_page2_school {
+    margin: 0 .5em 0 0;
+  }
+  .resume_page2_major {
+    margin: 0 0 0 .5em;
+  }
+  .resume_page2_grade {
+    margin: 0 0 0 1.5em;
+  }
+  .resume_page3_line3 {
+    margin: .5em 0 0 0;
+    display: table;
+    font-size: 2.5vh;
+    font-weight: normal;
+  }
+  .resume_page3_goodAt {
+    display: table-cell;
+    width: 3.5em;
+  }
+  .resume_page3_goodAtItems {
+    display: table-cell;
+  }
+  .resume_page3_line4 {
+    margin: .5em 0 0 0;
+    display: table;
+    font-size: 2.5vh;
+    font-weight: normal;
+  }
+  .resume_page3_use {
+    display: table-cell;
+    width: 3.5em;
+  }
+  .resume_page3_useItems {
+    display: table-cell;
+  }
+  .resume_page3_line5 {
+    margin: .5em 0 0 0;
+    display: table;
+    font-size: 2.5vh;
+    font-weight: normal;
+    color: #707070;
+  }
+  .resume_page3_github {
+    display: table-cell;
+    width: 2.8em;
+    font-size: 125%;
+  }
+  .resume_page3_githubItems {
+    display: table-cell;
+  }
+  .resume_page3_line6 {
+    margin: .5em 0 0 0;
+    display: table;
+    font-size: 2.5vh;
+    font-weight: normal;
+    color: #707070;
+  }
+  .resume_page3_email {
+    display: table-cell;
+    width: 2.8em;
+    font-size: 125%;
+  }
+  .resume_page3_emailItems {
+    display: table-cell;
+  }
+  .resume_page3_line7 {
+    margin: .5em 0 0 0;
+    display: table;
+    font-size: 2.5vh;
+    font-weight: normal;
+    color: #707070;
+  }
+  .resume_page3_tel {
+    display: table-cell;
+    width: 2.8em;
+    font-size: 125%;
+  }
+  .resume_page3_telItems {
+    display: table-cell;
+  }
+}
+@media screen and (orientation: landscape) {
+  .resume_page3 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #2b2b2b;
+  }
+  .subPage3-Decorate1 {
+    position: absolute;
+    top: 1em;
+    left: 1.5em;
+    font-size: 2.8vw;
+    letter-spacing: 1px;
+    word-spacing: 10px;
+  }
+  .subPage3-Decorate1Span {
+    padding: 0 0 .2em;
+    border-bottom: 3px solid #feca47;
+  }
+  .subPage3-Decorate1Span::after {
+    content: 'experience';
+    color: #707070;
+    font-size: 80%;
+    position: absolute;
+    top: 1.8em;
+    left: 1.875em;
+    letter-spacing: 2px;
+  }
+  .subPage3-Decorate2 {
+    font-size: 1.2vw;
+    background: rgba(253, 203, 12, 0.8);
+    border-radius: 50% 50%;
+    height: 6em;
+    width: 6em;
+    position: absolute;
+    bottom: -20%;
+    left: 5%;
+    z-index: 1;
+  }
+  .subPage3-Decorate3 {
+    font-size: 1.2vw;
+    background: #aaa;
+    border-radius: 50% 50%;
+    height: 11em;
+    width: 11em;
+    position: absolute;
+    top: 37%;
+    left: 8%;
+    z-index: 0;
+  }
+  .resume_page3_content {
+    position: relative;
+    width: 75%;
+    margin: 0 2.5em 0 0;
+  }
+  .resume_page3_table {
+    display: table;
+    width: 100%;
+    height: 100%;
+    font-size: .9vw;
+  }
+  .resume_page3_tableRow {
+    display: table-row;
+    font-size: 90%;
+  }
+  .resume_page3_tableCell {
+    display: table-cell;
+  }
+  .resume_page3_RowCell1 {
+    display: table-cell;
+    position: relative;
+    font-size: 220%;
+    text-align: right;
+    padding: 0  1em 0 0;
+    border-right: 5px solid #aaa;
+  }
+  .resume_page3_RowCell2 {
+    display: table-cell;
+    position: relative;
+    font-size: 220%;
+    padding: 0 0 0 1em;
+    word-spacing: 20px;
+  }
+  .resume_page3_RowCell2_title {
+    margin: 1em 0 0 0;
+    position: relative;
+  }
+  .resume_page3_RowCell2_title > span::before {
+    content: " ";
+    width: 1.3em;
+    height: 1.3em;
+    position: absolute;
+    background: #fdcb0c;
+    border-radius: 50% 50%;
+    left: -1.71em;
+  }
+  .resume_page3_RowCell2_title > span::after {
+    content: " ";
+    width: .6em;
+    height: .6em;
+    position: absolute;
+    top: .345em;
+    left: -1.37em;
+    background: white;
+    border-radius: 50% 50%;
+  }
+  .resume_page3_RowCell2_extra {
+    color: #aaa;
+    margin: 1em 0 0 0;
+  }
+}
+@media screen and (orientation: portrait) {
+  .resume_page3 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2b2b2b;
+  }
+  .subPage3-Decorate1 {
+    position: absolute;
+    top: 1em;
+    left: .5em;
+    font-size: 2.8vh;
+    letter-spacing: 1px;
+    word-spacing: 10px;
+  }
+  .subPage3-Decorate1Span {
+    padding: 0 0 .2em;
+    border-bottom: 3px solid #feca47;
+  }
+  .subPage3-Decorate1Span::after {
+    content: 'experience';
+    color: #707070;
+    font-size: 80%;
+    position: absolute;
+    top: 1.8em;
+    left: 1.875em;
+    letter-spacing: 2px;
+  }
+  .subPage3-Decorate2 {
+    font-size: 1.2vw;
+    background: rgba(253, 203, 12, 0.8);
+    border-radius: 50% 50%;
+    height: 6em;
+    width: 6em;
+    position: absolute;
+    bottom: -20%;
+    left: 5%;
+    z-index: 1;
+  }
+  .subPage3-Decorate3 {
+    font-size: 1.2vw;
+    background: #aaa;
+    border-radius: 50% 50%;
+    height: 11em;
+    width: 11em;
+    position: absolute;
+    top: 55%;
+    left: 4%;
+    z-index: 0;
+  }
+  .resume_page3_content {
+    position: relative;
+    width: 95%;
+    margin: 3em 0 0 0;
+  }
+  .resume_page3_table {
+    display: table;
+    width: 100%;
+    height: 100%;
+    font-size: 1.3vh;
+  }
+  .resume_page3_tableRow {
+    display: table-row;
+    font-size: 90%;
+  }
+  .resume_page3_tableCell {
+    display: table-cell;
+  }
+  .resume_page3_RowCell1 {
+    display: table-cell;
+    position: relative;
+    font-size: 220%;
+    text-align: right;
+    padding: 0  1em 0 0;
+    border-right: 5px solid #aaa;
+  }
+  .resume_page3_RowCell2 {
+    display: table-cell;
+    position: relative;
+    font-size: 220%;
+    padding: 0 0 0 1em;
+    word-spacing: 20px;
+  }
+  .resume_page3_RowCell2_title {
+    margin: 1em 0 0 0;
+    position: relative;
+  }
+  .resume_page3_RowCell2_title > span::before {
+    content: " ";
+    width: 1.3em;
+    height: 1.3em;
+    position: absolute;
+    background: #fdcb0c;
+    border-radius: 50% 50%;
+    left: -1.71em;
+  }
+  .resume_page3_RowCell2_title > span::after {
+    content: " ";
+    width: .6em;
+    height: .6em;
+    position: absolute;
+    top: .345em;
+    left: -1.37em;
+    background: white;
+    border-radius: 50% 50%;
+  }
+  .resume_page3_RowCell2_extra {
+    color: #aaa;
+    margin: 1em 0 0 0;
+  }
 }

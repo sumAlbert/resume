@@ -15,6 +15,7 @@
         $_fullPage_turnInterval: 800,//翻页的间隔函数
         $_fullPage_touch_startY: 0,//移动端touch初始位置纵坐标
         $_fullPage_touch_stopY: 0,//移动端touch结束位置纵坐标
+        $_fullPage_scrollInterval: 1200,//触发一次滚动的时间间隔
 
         //fullPage可调用的函数
         /**
@@ -99,15 +100,13 @@
                 this.$_fullPage_turnFlag=true;
 
                 //向下翻页
-                this.$_fullPageWrapper_DOM.style.cssText="top: -"+this.$_fullPage_currentPage+"00%;";
+                this.$_fullPageWrapper_DOM.style.cssText="top: -"+this.$_fullPage_currentPage+"00vh;";
 
 
                 setTimeout(function () {
                     this.$_fullPage_turnFlag=false;
                     this.$_fullPage_currentPage=this.$_fullPage_currentPage+1;
-                    console.log("finish");
-                    console.log(this.$_fullPage_currentPage);
-                }.bind(this),this.$_fullPage_turnInterval+300);
+                }.bind(this),this.$_fullPage_scrollInterval);
             }
         },
         /**
@@ -118,14 +117,13 @@
                 this.$_fullPage_turnFlag=true;
 
                 //向上翻页
-                this.$_fullPageWrapper_DOM.style.cssText="top: -"+(this.$_fullPage_currentPage-2)+"00%;";
-                console.log(this.$_fullPageWrapper_DOM.style);
+                this.$_fullPageWrapper_DOM.style.cssText="top: -"+(this.$_fullPage_currentPage-2)+"00vh;";
 
 
                 setTimeout(function () {
                     this.$_fullPage_turnFlag=false;
                     this.$_fullPage_currentPage=this.$_fullPage_currentPage-1;
-                }.bind(this),this.$_fullPage_turnInterval+150);
+                }.bind(this),this.$_fullPage_scrollInterval);
             }
         }
 
