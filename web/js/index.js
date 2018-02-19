@@ -1,1 +1,1 @@
-$fullPage("fullPageViewPort","fullPageWrapper").init();git
+$fullPage("fullPageViewPort","fullPageWrapper").init();

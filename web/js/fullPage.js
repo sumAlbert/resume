@@ -2,6 +2,7 @@
     var $fullPage=function(viewPort_id,wrapper_id){
         return new $fullPage.prototype.create(viewPort_id,wrapper_id);
     };
+
     $fullPage.prototype={
         constructor: $fullPage,
         //fullPage内部参数
@@ -12,6 +13,8 @@
         $_fullPage_totalPage: 1,//总页面
         $_fullPage_turnFlag: false,//是否正在进行翻页操作
         $_fullPage_turnInterval: 800,//翻页的间隔函数
+        $_fullPage_touch_startY: 0,//移动端touch初始位置纵坐标
+        $_fullPage_touch_stopY: 0,//移动端touch结束位置纵坐标
 
         //fullPage可调用的函数
         /**
@@ -49,7 +52,7 @@
                 this.$_fullPageWrapper_DOM.className=this.$_fullPageWrapper_DOM.className?this.$_fullPageWrapper_DOM.className+"_fullPageWrapper":"_fullPageWrapper";
             }
 
-            //添加滚动监听
+            //添加PC端滚动监听
             var mouseScroll=function (event) {
                 var direction;
                 if(event.wheelDelta){
@@ -70,6 +73,22 @@
                 document.addEventListener("DOMmouseScroll",mouseScroll.bind(this));
             }
             window.onmousewheel=document.onmousewheel=mouseScroll.bind(this);
+
+            //添加移动端滚动监听
+            document.body.ontouchstart=function (event) {
+                event.preventDefault();
+                this.$_fullPage_touch_startY=event.touches[0].pageY;
+            }.bind(this);
+            document.body.ontouchmove=function (event) {
+                event.preventDefault();
+                this.$_fullPage_touch_stopY=event.touches[0].pageY;
+                if(this.$_fullPage_touch_startY>this.$_fullPage_touch_stopY){
+                    this.next();
+                }
+                else{
+                    this.prev();
+                }
+            }.bind(this);
             return this;
         },
         /**
@@ -112,5 +131,6 @@
 
     };
     $fullPage.prototype.create.prototype=$fullPage.prototype;
+
     window.$fullPage=$fullPage;
 })(window);

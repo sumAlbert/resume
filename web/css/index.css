@@ -7,8 +7,70 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  font-family: PingFang SC,Helvetica,Arial;
 }
 .main {
   height: 100%;
   width: 100%;
+}
+.resume_page {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+.resume_page_space_column {
+  width: 100%;
+}
+.resume_page_space_row {
+  height: 100%;
+}
+.resume_page1 {
+  position: relative;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(13, 13, 13, 0.7), rgba(13, 13, 13, 0.7)) center center no-repeat, url("../img/resume/page1_bg.jpeg") center center no-repeat;
+  background-size: 100% 100%,cover;
+}
+.resume_page1_header {
+  margin: 0;
+  padding: .5em 0;
+  font-size: 9vh;
+  color: white;
+  border-bottom: 2px solid #466dbc;
+}
+.resume_page1_author {
+  margin: 0;
+  font-size: 4vh;
+  color: white;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+}
+.resume_page1_occupation {
+  margin: 0;
+  font-size: 4vh;
+  color: white;
+  font-weight: lighter;
+  word-spacing: 5px;
+  letter-spacing: 3px;
+}
+.resume_page1_space1 {
+  width: 100%;
+  flex: 160;
+}
+.resume_page1_space2 {
+  width: 100%;
+  flex: 196;
+}
+.resume_page1_space3 {
+  width: 100%;
+  flex: 46;
+}
+.resume_page1_space4 {
+  width: 100%;
+  flex: 180;
 }

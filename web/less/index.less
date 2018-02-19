@@ -1,13 +1,81 @@
 /*
  * @author Albert
  */
+@pageNum: 5;
+@maskerLayerColor: hsla(0,0,5%,.7);
+@resume_page1_space: 160,196,46,180;
+
 html,body{
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+  font-family: PingFang SC,Helvetica,Arial;
 }
 .main{
   height: 100%;
   width: 100%;
 }
+
+//简历部分，开始
+//简历部分公共样式
+.resume_page{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+.resume_page_space_column{
+  width: 100%;
+}
+.resume_page_space_row{
+  height: 100%;
+}
+//简历部分私有样式
+.resume_page1{
+  .resume_page;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(@maskerLayerColor,@maskerLayerColor) center center no-repeat , url("../img/resume/page1_bg.jpeg") center center no-repeat;
+  background-size: 100% 100%,cover;
+}
+
+.resume_page1_header{
+  margin: 0;
+  padding: .5em 0;
+  font-size: 9vh;
+  color: white;
+  border-bottom: 2px solid #466dbc;
+}
+.resume_page1_author{
+  margin: 0;
+  font-size: 4vh;
+  color: white;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+}
+.resume_page1_occupation{
+  margin: 0;
+  font-size: 4vh;
+  color: white;
+  font-weight: lighter;
+  word-spacing: 5px;
+  letter-spacing: 3px;
+}
+
+.resume_page1_space_gen(4);
+
+.resume_page1_space_gen(@n,@i:1) when(@i<=@n){
+  .resume_page1_space@{i}{
+    .resume_page_space_column;
+    flex: extract(@resume_page1_space,@i);
+  }
+  .resume_page1_space_gen(@n,@i+1);
+}
+
+//简历部分，结束
+
+
