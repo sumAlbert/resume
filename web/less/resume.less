@@ -1,0 +1,308 @@
+/**
+ * @author:Albert
+ */
+@headerLine: 12mm;
+@leftPartFlex:0,1,2;
+@leftPartNum:3;
+@rightPartFlex:0,2,2,1;
+@rightPartNum:4;
+@themeColor: #51b2f9;
+@shadowColor: hsl(0,0%,.8);
+
+
+html,body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+li{color: #666;}
+//简历主体部分，开始
+.main{
+  display: flex;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  background: #f2f2f2;
+  box-shadow: 0 0 0 1px black;
+}
+.leftPart{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  background: white;
+  box-shadow: 0 0 5.5mm 1.5mm darken(@shadowColor,10%);
+  z-index: 2;
+}
+.rightPart{
+  display: flex;
+  flex-direction: column;
+  flex: 2.3;
+  height: 100%;
+}
+
+//左边部分
+//左边共有样式
+.leftPart-sub{
+  width: 100%;
+}
+.leftPart-subGen(@leftPartNum);
+.leftPart-subGen(@n,@i:1) when(@i<=@n){
+  .leftPart-sub@{i} when (@i = 1){
+    .leftPart-sub;
+    height: @headerLine;
+  }
+  .leftPart-sub@{i} when not (@i = 1){
+    .leftPart-sub;
+    flex: extract(@leftPartFlex,@i);
+  }
+  .leftPart-subGen(@n,@i+1);
+}
+//左边私有样式
+//左边第一部分
+.leftPart-sub1{
+  font-size: 8mm;
+  line-height: @headerLine;
+  text-align: center;
+  color: #c1c1c1;
+}
+
+//左边第二部分
+.leftPart-sub2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: @themeColor;
+}
+.leftPart-sub2Avatar{
+  width: 36mm;
+  height: 36mm;
+  border-radius: 50% 50%;
+  background: url("../img/avatar.jpg") center center no-repeat,linear-gradient(white,white) center center repeat;
+  background-size: contain,100% 100%;
+}
+.leftPart-sub2Name{
+  color: white;
+  letter-spacing: 1mm;
+  text-align: center;
+  margin: 3mm 0;
+}
+.leftPart-sub2-Line1{
+  background: darken(@themeColor,30%);
+  margin: 0 0 2mm 0;
+  width: 40mm;
+  height: .8mm;
+}
+.leftPart-sub2-Motto{
+  color: darken(@themeColor,30%);
+  font-size: 70%;
+  line-height: 1.5em;
+}
+.leftPart-sub2-Job{
+  color: darken(@themeColor,30%);
+  font-size: 4.5mm;
+  margin: 0 0 5mm 0;
+  padding: 1mm 3mm;
+  background: white;
+  border-radius: 4mm;
+}
+//左边第三部分
+.leftPart-sub3{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.leftPart-sub3-prize{
+  color: white;
+  margin: 12mm 0 0;
+  padding: 2mm 3mm;
+  font-size: 6mm;
+  letter-spacing: 1mm;
+  font-weight: bold;
+  align-self: flex-start;
+  background: @themeColor;
+}
+.leftPart-sub3-contact{
+  color: white;
+  margin: 12mm 0 0;
+  padding: 2mm 3mm;
+  font-size: 6mm;
+  letter-spacing: 1mm;
+  font-weight: bold;
+  align-self: flex-start;
+  background: @themeColor;
+}
+.leftPart-sub3-prizeUl{
+  line-height: 2.5em;
+  padding: 0;
+}
+.leftPart-sub3-contactUl{
+  line-height: 2.5em;
+  padding: 0;
+}
+.leftPart-sub3-contactUl > li{
+  position: relative;
+  list-style-type: none;
+}
+//右边部分
+//右边共有样式
+.rightPart-sub{
+  width: 100%;
+}
+.rightPart-subGen(@rightPartNum);
+.rightPart-subGen(@n,@i:1)when(@i<=@n){
+
+  .rightPart-sub@{i} when (@i = 1){
+    .rightPart-sub;
+    height: @headerLine;
+    width: 100%;
+  }
+  .rightPart-sub@{i} when not (@i = 1){
+    .rightPart-sub;
+    position: relative;
+    box-shadow: 1mm -1mm 1mm 1mm lighten(@shadowColor,10%);
+    flex: extract(@rightPartFlex,@i);
+    width: 100%;
+    background: #f9f9f9;
+  }
+  //弧形及投影
+  .rightPart-sub@{i}::before when not (@i = 1){
+    position: absolute;
+    content: " ";
+    right: 20mm;
+    height: 10mm;
+    width: 17mm;
+    border-radius: 0 0 50% 50% ~'/' 0 0 100% 100% ;
+    box-shadow: 0 -1mm 3mm 1mm lighten(@shadowColor,10%) inset;
+  }
+  .rightPart-subGen(@n,@i+1)
+}
+.rightPart-subHidden1{
+  position: absolute;
+  top: -9mm;
+  right: 29.9mm;
+  height: 13mm;
+  width: 13mm;
+  background: radial-gradient(at 0% 100%,transparent 50%,#f9f9f9 0) center center no-repeat;
+  background-size: 100% 100%;
+}
+.rightPart-subHidden2{
+  position: absolute;
+  top: -9mm;
+  right: 14mm;
+  height: 13mm;
+  width: 13mm;
+  background: radial-gradient(at 100% 100%,transparent 50%,#f9f9f9 0) center center no-repeat;
+  background-size: 100% 100%;
+}
+.rightPart-subHidden3{
+  position: absolute;
+  top: -9mm;
+  right: 26mm;
+  height: 13mm;
+  width: 5mm;
+  background: #f9f9f9 center center no-repeat;
+  background-size: 100% 100%;
+}
+.rightPart-sub2Hidden1{
+  position: absolute;
+  top: -9mm;
+  right: 29.9mm;
+  height: 13mm;
+  width: 13mm;
+  background: radial-gradient(at 0% 100%,transparent 50%,#f2f2f2 0) center center no-repeat;
+  background-size: 100% 100%;
+}
+.rightPart-sub2Hidden2{
+  position: absolute;
+  top: -9mm;
+  right: 14mm;
+  height: 13mm;
+  width: 13mm;
+  background: radial-gradient(at 100% 100%,transparent 50%,#f2f2f2 0) center center no-repeat;
+  background-size: 100% 100%;
+}
+.rightPart-sub2Hidden3{
+  position: absolute;
+  top: -9mm;
+  right: 26mm;
+  height: 13mm;
+  width: 5mm;
+  background: #f2f2f2 center center no-repeat;
+  background-size: 100% 100%;
+}
+.rightPart-sub2Hidden4{
+  position: absolute;
+  top: 4mm;
+  right: 23.5mm;
+  height: 3mm;
+  width: 10mm;
+  background: #f2f2f2 center center no-repeat;
+  border-radius: 0 0 50% 50% ~'/' 0 0 70% 70% ;
+  background-size: 100% 100%;
+}
+.rightPart-subContent{
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+.rightPart-subTitle{
+  color: @themeColor;
+}
+.rightPart-subTitle::after{
+  display: block;
+  content: " ";
+  margin: 2mm 0 0;
+  background: #ccc;
+  width: 100%;
+  height: .2mm;
+}
+//右边私有样式
+//项目经历
+.projectTable{
+  display: table;
+  width: 100%;
+}
+.projectRow{
+  display: table-row;
+}
+//项目经历左边样式
+.projectCell1{
+  top: 1mm;
+  position: relative;
+  display: table-cell;
+  width: 13mm;
+  overflow: hidden;
+}
+.projectVerticalLine{
+  position: absolute;
+  height: 100%;
+  width: .2mm;
+  top: 3mm;
+  left: 5.8mm;
+  background: #ccc;
+}
+.projectCircle1{
+  position: absolute;
+  height: 4.5mm;
+  width: 4.5mm;
+  left: 3.6mm;
+  border-radius: 50% 50%;
+  background: radial-gradient(at center center,#f2f2f2 30%,@themeColor 0) center center no-repeat;
+}
+//项目经历右边样式
+.projectCell2{
+  display: table-cell;
+  position: relative;
+}
+.projectName{
+  color: @themeColor;
+  font-size: 5mm;
+}
+
+//简历主体部分，结束
+
+

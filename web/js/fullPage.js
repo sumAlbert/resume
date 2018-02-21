@@ -77,7 +77,6 @@
 
             //添加移动端滚动监听
             document.body.ontouchstart=function (event) {
-                event.preventDefault();
                 this.$_fullPage_touch_startY=event.touches[0].pageY;
             }.bind(this);
             document.body.ontouchmove=function (event) {
