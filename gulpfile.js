@@ -14,6 +14,8 @@ gulp.task("less-watch",function () {
    gulp.watch("./web/less/*.less",["less-compile"])
 });
 
+gulp.task("default",['less-compile']);
+
 
 
 

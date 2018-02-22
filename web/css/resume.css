@@ -134,7 +134,7 @@ li {
 }
 .contactDetail {
   color: #666;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .rightPart-sub {
   width: 100%;
