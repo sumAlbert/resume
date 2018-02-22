@@ -4,6 +4,7 @@
 @pageNum: 5;
 @maskerLayerColor: hsla(0,0,5%,.7);
 @resume_page1_space: 160,196,46,180;
+@resume_page5_space: 160,196,66,26,180;
 
 html,body{
   margin: 0;
@@ -768,11 +769,11 @@ html,body{
   font-weight: normal;
   text-decoration: underline;
 }
-.resume_page5_space_gen(4);
+.resume_page5_space_gen(5);
 .resume_page5_space_gen(@n,@i:1) when(@i<=@n){
   .resume_page5_space@{i}{
     .resume_page_space_column;
-    flex: extract(@resume_page1_space,@i);
+    flex: extract(@resume_page5_space,@i);
   }
   .resume_page5_space_gen(@n,@i+1);
 }

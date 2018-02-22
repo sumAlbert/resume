@@ -132,17 +132,23 @@ li {
   position: relative;
   list-style-type: none;
 }
+.contactDetail {
+  color: #666;
+  text-decoration: underline;
+}
 .rightPart-sub {
   width: 100%;
+  padding: 0 0 6mm;
 }
 .rightPart-sub1 {
+  padding: 0 0 6mm;
   height: 12mm;
   width: 100%;
 }
 .rightPart-sub2 {
+  padding: 0 0 6mm;
   position: relative;
   box-shadow: 1mm -1mm 1mm 1mm #e6e6e6;
-  flex: 2;
   width: 100%;
   background: #f9f9f9;
 }
@@ -156,9 +162,9 @@ li {
   box-shadow: 0 -1mm 3mm 1mm #e6e6e6 inset;
 }
 .rightPart-sub3 {
+  padding: 0 0 6mm;
   position: relative;
   box-shadow: 1mm -1mm 1mm 1mm #e6e6e6;
-  flex: 2;
   width: 100%;
   background: #f9f9f9;
 }
@@ -172,11 +178,16 @@ li {
   box-shadow: 0 -1mm 3mm 1mm #e6e6e6 inset;
 }
 .rightPart-sub4 {
+  padding: 0 0 6mm;
   position: relative;
   box-shadow: 1mm -1mm 1mm 1mm #e6e6e6;
-  flex: 1;
   width: 100%;
   background: #f9f9f9;
+}
+.rightPart-sub4 {
+  width: 100%;
+  padding: 0 0 6mm;
+  flex: 1;
 }
 .rightPart-sub4::before {
   position: absolute;
@@ -270,6 +281,8 @@ li {
 .projectTable {
   display: table;
   width: 100%;
+  position: relative;
+  z-index: 3;
 }
 .projectRow {
   display: table-row;
@@ -300,8 +313,105 @@ li {
 .projectCell2 {
   display: table-cell;
   position: relative;
+  padding: 0 0 2mm;
 }
 .projectName {
   color: #51b2f9;
   font-size: 5mm;
+  display: inline-block;
+  text-decoration: underline;
+}
+.projectHighLightItems {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  font-size: 4mm;
+  vertical-align: middle;
+}
+.projectHighLightItem {
+  position: relative;
+  display: inline-block;
+  font-size: 3mm;
+  vertical-align: middle;
+  padding: 1mm 1.5mm;
+  background: #51b2f9;
+  color: white;
+  line-height: 1.5em;
+  z-index: 2;
+}
+.projectHighLightLine {
+  position: absolute;
+  top: 3mm;
+  width: 100%;
+  height: .8mm;
+  background: #51b2f9;
+}
+.projectOutline {
+  font-size: 3mm;
+  color: #666;
+}
+.projectDetail {
+  padding: 0 0 0 3mm ;
+  font-size: 2.5mm;
+  margin: 1mm 0;
+}
+.skillTable {
+  display: table;
+  background: #51b2f9;
+  width: 90%;
+  margin: 2mm auto;
+  border: 0.7mm solid #51b2f9;
+  position: relative;
+  z-index: 3;
+}
+.skillTable-left {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 15mm;
+  height: 10mm;
+  background: #51b2f9;
+  color: #f9f9f9;
+}
+.skillTable-wrapper {
+  display: inline-block;
+}
+.skillTable-right {
+  display: table-cell;
+  font-size: 2mm;
+  vertical-align: middle;
+  background: #f9f9f9;
+  color: #666;
+  padding: 0 0 0 2mm;
+}
+.skillTable-right > ul {
+  padding: 0 5mm;
+}
+.ecnu {
+  position: absolute;
+}
+.sjtu {
+  position: absolute;
+  left: 50%;
+}
+.university-name {
+  color: #51b2f9;
+  font-size: 5mm;
+  font-weight: bold;
+  line-height: 2em;
+}
+.university-time {
+  color: #0882dc;
+  font-size: 3.5mm;
+  line-height: 2em;
+}
+.university-major {
+  color: #666;
+  font-size: 4mm;
+  line-height: 2em;
+}
+.university-grade {
+  color: #666;
+  font-size: 4mm;
+  line-height: 2em;
 }

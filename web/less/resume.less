@@ -4,7 +4,7 @@
 @headerLine: 12mm;
 @leftPartFlex:0,1,2;
 @leftPartNum:3;
-@rightPartFlex:0,2,2,1;
+@rightPartFlex:0,0,0,1;
 @rightPartNum:4;
 @themeColor: #51b2f9;
 @shadowColor: hsl(0,0%,.8);
@@ -147,10 +147,15 @@ li{color: #666;}
   position: relative;
   list-style-type: none;
 }
+.contactDetail{
+  color: #666;
+  text-decoration: underline;
+}
 //右边部分
 //右边共有样式
 .rightPart-sub{
   width: 100%;
+  padding: 0 0 6mm;
 }
 .rightPart-subGen(@rightPartNum);
 .rightPart-subGen(@n,@i:1)when(@i<=@n){
@@ -164,9 +169,12 @@ li{color: #666;}
     .rightPart-sub;
     position: relative;
     box-shadow: 1mm -1mm 1mm 1mm lighten(@shadowColor,10%);
-    flex: extract(@rightPartFlex,@i);
     width: 100%;
     background: #f9f9f9;
+  }
+  .rightPart-sub@{i} when (@i = 4){
+    .rightPart-sub;
+    flex: 1;
   }
   //弧形及投影
   .rightPart-sub@{i}::before when not (@i = 1){
@@ -265,6 +273,8 @@ li{color: #666;}
 .projectTable{
   display: table;
   width: 100%;
+  position: relative;
+  z-index: 3;
 }
 .projectRow{
   display: table-row;
@@ -297,12 +307,110 @@ li{color: #666;}
 .projectCell2{
   display: table-cell;
   position: relative;
+  padding: 0 0 2mm;
 }
 .projectName{
   color: @themeColor;
   font-size: 5mm;
+  display: inline-block;
+  text-decoration: underline;
+}
+.projectHighLightItems{
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  font-size: 4mm;
+  vertical-align: middle;
+}
+.projectHighLightItem{
+  position: relative;
+  display: inline-block;
+  font-size: 3mm;
+  vertical-align: middle;
+  padding: 1mm 1.5mm;
+  background: @themeColor;
+  color: white;
+  line-height: 1.5em;
+  z-index: 2;
+}
+.projectHighLightLine{
+  position: absolute;
+  top: 3mm;
+  width: 100%;
+  height: .8mm;
+  background: @themeColor;
+}
+.projectOutline{
+  font-size: 3mm;
+  color: #666;
+}
+.projectDetail{
+  padding: 0 0 0 3mm ;
+  font-size: 2.5mm;
+  margin: 1mm 0;
 }
 
+//专业技能
+.skillTable{
+  display: table;
+  background: @themeColor;
+  width: 90%;
+  margin: 2mm auto;
+  border: .7mm solid @themeColor;
+  position: relative;
+  z-index: 3;
+}
+.skillTable-left{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 15mm;
+  height: 10mm;
+  background: @themeColor;
+  color: #f9f9f9;
+}
+.skillTable-wrapper{
+  display: inline-block;
+}
+.skillTable-right{
+  display: table-cell;
+  font-size: 2mm;
+  vertical-align: middle;
+  background: #f9f9f9;
+  color: #666;
+  padding: 0 0 0 2mm;
+}
+.skillTable-right >ul{
+  padding: 0 5mm;
+}
+
+//教育背景
+.ecnu{
+  position: absolute;
+}
+.sjtu{
+  position: absolute;
+  left: 50%;
+}
+.university-name{
+  color: @themeColor;
+  font-size: 5mm;
+  font-weight: bold;
+  line-height: 2em;
+}
+.university-time{
+  color: darken(@themeColor,20%);
+  font-size: 3.5mm;
+  line-height: 2em;
+}
+.university-major{
+  color: #666;
+  font-size: 4mm;
+  line-height: 2em;
+}
+.university-grade{
+  .university-major;
+}
 //简历主体部分，结束
 
 

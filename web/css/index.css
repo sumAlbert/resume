@@ -910,9 +910,13 @@ body {
 }
 .resume_page5_space3 {
   width: 100%;
-  flex: 46;
+  flex: 66;
 }
 .resume_page5_space4 {
+  width: 100%;
+  flex: 26;
+}
+.resume_page5_space5 {
   width: 100%;
   flex: 180;
 }
