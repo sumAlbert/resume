@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+(function(){
+
+    /**
+     * 将转义字符去掉
+     * @param sentence 需要去除转义的字符串
+     * @returns {*} 去除转义后的字符串
+     */
+    var unTransfer=function(sentence){
+        sentence=sentence.replace(/(\\"|\\')/g,"'");
+        return sentence;
+    };
+
+    /**
+     * 判断传入字符串的种类
+     * @param sentence 需要判断种类的字符串
+     * @returns {number}
+     */
+    var judgeType=function(sentence){//根据字符串的收尾元素判断字符串代表的对象
+        var result=-1;
+        //对sentence做格式判断
+        if((typeof sentence) !=="string"){
+            toast("内容不是字符串");
+            console.log(sentence);
+            return result;
+        }
+        //对sentence内容的格式做判断
+        if(sentence.match(/^{.*}$/)){//是否为对象
+            result=0;
+        }
+        else if(sentence.match(/^\[.*\]$/)) {//判断是否为数组
+            result=1;
+        }
+        else if(sentence.match(/^('|").*('|")$/)) {//判断是否为字符串
+            result=2;
+        }
+        else if(sentence.match(/^\d*$/)){//判断是否为数字
+            result=3;
+        }
+        else if(sentence.match(/^(true)|(false)$/)){//判断是否为布尔表达式
+            result=4;
+        }
+        else{
+            var num=sentence.length;
+            if(num<=10){
+                toast("字符串的种类出错:"+sentence);
+            }
+            else{
+                toast("字符串的种类出错:"+sentence.substring(0,10));
+            }
+        }
+        return result;
+    };
+
+    /**
+     * 提示输出信息，为了后续做界面留出接口
+     * @param str 提示信息
+     */
+    var toast=function(str){//提示的输出错误信息
+        console.log(str);
+    };
+
+
+    /**
+     *
+     * @param sentence 需要转化为keyValue结点的字符串
+     * @returns {Array} 返回的结果
+     */
+    var analysisToKeyValue=function(sentence){
+        var result=[];
+
+        var tempKey=sentence.match(/^("|').*?("|')/);
+        while(tempKey){
+            //解析出key
+            var kvNode={
+                key:tempKey[0].substring(1,tempKey[0].length-1)
+            };
+
+
+
+            //解析出value
+            var valueSentence=sentence.substring(tempKey[0].length);
+            if(valueSentence.charAt(0)!==":"){//如果key后面没有':',则说明当前不是keyValue的格式
+                result=[];
+                break;
+            }
+            var endValue;//value最后一个边界的位置
+            var endValueFlag=true;//value是否符合格式
+            switch (valueSentence.charAt(1)){
+                case "{":{
+                    endValue=valueSentence.indexOf("}");
+                    if(endValue===-1){
+                        endValueFlag=false;
+                    }
+                    else{
+                        kvNode.value=valueSentence.substring(1,endValue+1);
+                        valueSentence=valueSentence.substring(endValue+1);
+                    }
+                    break;
+                }
+                case "[":{
+                    endValue=valueSentence.indexOf("]");
+                    if(endValue===-1){
+                        endValueFlag=false;
+                    }
+                    else{
+                        kvNode.value=valueSentence.substring(1,endValue+1);
+                        valueSentence=valueSentence.substring(endValue+1);
+                    }
+                    break;
+                }
+                default:{
+                    endValue=valueSentence.indexOf(",");
+                    if(endValue===-1){
+                        kvNode.value=valueSentence.substring(1);
+                        valueSentence="";
+                    }
+                    else{
+                        kvNode.value=valueSentence.substring(1,endValue);
+                        valueSentence=valueSentence.substring(endValue);
+                    }
+                    break;
+                }
+            }
+
+
+            //解析完key/value的后续处理
+            if(!endValueFlag){//匹配value失败
+                result=[];
+                break;
+            }
+            if(valueSentence.charAt(0)!==","){//keyValue之间缺少','，可能是因为最后结尾
+                if(valueSentence.length===0){
+                    tempKey=null;
+                }
+                else{
+                    result=[];
+                    break;
+                }
+            }
+            else{//keyValue存在逗号，为下一轮循环做准备
+                sentence=valueSentence.substring(1);
+                tempKey=sentence.match(/^("|').*?("|')/)
+            }
+            result.push(kvNode);
+        }
+        return result;
+    };
+
+    /**
+     * 需要转化为数组的结点的字符串
+     * @param sentence 待转化的字符串
+     * @returns {Array} 转化出来的结果
+     */
+    var analysisToArray=function (sentence) {
+        var result=[];
+
+        var valueSenten=sentence;
+
+        switch (valueSenten.charAt(0)){
+            case '[':{
+                break;
+            }
+            case '{':{
+                break;
+            }
+            case ""
+        }
+
+
+        return result;
+    };
+
+
+
+
+
+    //主函数
+    var strToJSON=function(sentence){
+        var result=[];//返还的结果
+        var content;//字符串内部的主体内容
+        var contentKeyValueNode;//content解析出的key-value结点
+        //去除字符串自带的转义
+        sentence=unTransfer(sentence);
+
+
+        //按字符串内部内容的种类进行解析
+        switch (judgeType(sentence)){
+            case 0:{//内部为对象
+                content=sentence.substring(1,sentence.length-1);
+                contentKeyValueNode=analysisToKeyValue(content);
+                contentKeyValueNode.forEach(function(v){
+                    result[v.key]=v.value;
+                });
+                break;
+            }
+            case 1:{//内部为数组
+                content=sentence.substring(1,sentence.length-1);
+
+                break;
+            }
+            case 2:{//内部为字符串
+                content=sentence.substring(0,sentence.length-1);
+                result=content;
+                break;
+            }
+            case 3:{//内部为数字
+                result=parseInt(sentence);
+                break;
+            }
+            case 4:{//内部为布尔表达式
+                result=Boolean(sentence);
+                break;
+            }
+            default:{
+                break;
+            }
+        }
+        return result;
+    };
+
+
+    var test="{\"dfg\":[1,2,3],\"asd\":123,\"zxc\":{\"asd\":true},}";
+    console.log(strToJSON(test));
+})();
+
+
+
+
+
+
+</script>
+</html>
+
+<!--function strToJSON(centence){-->
+<!--var header=centence.charAt(0);//字符串的第一个字符，用于判断当前层是对象或是数组-->
+<!--var tailer=centence.charAt(centence.length-1);//字符串的最后一个字符，用于判断当前层是对象或是数组-->
+
+<!--var content=centence.substring(1,centence.length-1);//去除首尾的主体内容部分-->
+
+<!--var result;//用于返回的结果,返回-1表示格式不正确-->
+<!--var keyValueNodes=[];//用于存储当前"key:value"的数组-->
+
+<!--if(header==="{"&&tailer==="}"){//当前该层字符串为对象-->
+<!--result={};-->
+<!--keyValueNodes=content.split(",");-->
+
+
+<!--for(var keyValueIndex in keyValueNodes){-->
+
+<!--var keyValueNode=keyValueNodes[keyValueIndex];-->
+<!--console.log(keyValueNode);-->
+
+
+<!--//判断是否为keyValue的格式-->
+<!--var keyValueArray=isKeyValue(keyValueNode);-->
+<!--if(!keyValueArray){//当前层次的冒号数量不正确-->
+<!--toast("当前层次的冒号数量不正确:"+keyValueNode);-->
+<!--result=-1;-->
+<!--break;-->
+<!--}-->
+<!--else{//当前层次的冒号数量正确-->
+<!--var currentValue=strToJSON(keyValueArray[1]);-->
+
+<!--if(currentValue===-1){-->
+<!--result=-1;-->
+<!--break;-->
+<!--}-->
+<!--else{-->
+<!--result[keyValueArray[0].replace(/"/g,"")]=currentValue;-->
+<!--}-->
+<!--}-->
+<!--}-->
+<!--}-->
+<!--else if(header==="["&&tailer==="]"){//当前该层字符串为数组-->
+<!--result=[];-->
+<!--keyValue=content.split(",");-->
+<!--}-->
+<!--else if(header==="\""&&tailer==="\""){//如果是字符串则直接返回(还需要判断是否为数字或者布尔值)-->
+<!--return content;-->
+<!--}-->
+<!--else{-->
+<!--toast("语法错误，第一个字符和最后一个字符不能形成一个变量");-->
+<!--result=-1;-->
+<!--}-->
+<!--return result;-->
+<!--}-->
+
+
+<!--function isKeyValue(str){-->
+<!--var items=str.split(":");-->
+<!--var result=false;-->
+
+<!--if(items.length>1){//如果有超过两个的冒号-->
+<!--result=[items[0],""];-->
+<!--for(var i=1;i<items.length;i++){-->
+<!--result[1]=result[1]+":"+items[1];-->
+<!--}-->
+<!--console.log(items);-->
+<!--}-->
+<!--return result;-->
+<!--}-->
+
+<!--var  testStr="";-->
+<!--var result=strToJSON();-->
+
+<!--console.log(result);-->
