@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resume</title>
+    <link href="css/resume-normal.css" rel="stylesheet">
+    <link href="css/iconfont.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/icon" href="img/favicon.ico">
+</head>
+<body>
+    <div class="main">
+        <div class="leftPart">
+            <div class="leftPart-sub1">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-geren"></use>
+                </svg>
+                Resume
+            </div>
+            <div class="leftPart-sub2">
+                <div class="leftPart-sub2Avatar"></div>
+                <h1 class="leftPart-sub2Name">章琪</h1>
+                <div class="leftPart-sub2-Job">前端开发工程师</div>
+                <div class="leftPart-sub2-Line1"></div>
+                <div class="leftPart-sub2-Motto">专研，只因多一度热爱<br>原生，只为多一种可能</div>
+            </div>
+            <div class="leftPart-sub3">
+                <div class="leftPart-sub3-prize">所获荣誉</div>
+                <ul class="leftPart-sub3-prizeUl">
+                    <li>国家奖学金 2次</li>
+                    <li>创新创业大赛(网页组)<br>二等奖 2次</li>
+                    <li>"大夏杯"创业计划大赛<br>三等奖 1次</li>
+                    <li>校优秀学生<br>校优秀学生干部</li>
+                </ul>
+                <div class="leftPart-sub3-contact">联系方式</div>
+                <ul class="leftPart-sub3-contactUl">
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-icon-email"></use>
+                        </svg>
+                        <a class="contactDetail">zhangqi_ecnu@163.com</a>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                        <a class="contactDetail" href="https://github.com/sumAlbert">github.com/sumAlbert</a>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-tel"></use>
+                        </svg>
+                        <a class="contactDetail">15317315332</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightPart">
+            <!--<div class="rightPart-sub1"></div>-->
+            <div class="rightPart-sub2">
+                <div class="rightPart-sub2Hidden1"></div>
+                <div class="rightPart-sub2Hidden2"></div>
+                <div class="rightPart-sub2Hidden3"></div>
+                <div class="rightPart-sub2Hidden4"></div>
+                <div class="rightPart-subContent">
+                    <h2 class="rightPart-subTitle">项目经历</h2>
+                    <div class="projectTable">
+                        <div class="projectRow">
+                            <div class="projectCell1">
+                                <div class="projectVerticalLine"></div>
+                                <div class="projectCircle1"></div>
+                            </div>
+                            <div class="projectCell2">
+                                <a class="projectName" href="http://osm.dianping.com/os/info/nearby-search">美团点评 点评App(Web部分)</a>
+                                <div class="projectHighLightItems">
+                                    <div class="projectHighLightLine"></div>
+                                    <div class="projectHighLightItem">Vue</div>
+                                    <div class="projectHighLightItem">Vuex</div>
+                                    <div class="projectHighLightItem">SSR</div>
+                                    <div class="projectHighLightItem">Hybrid App</div>
+                                </div>
+                                <div class="projectOutline">一款基于Hybrid App开发的美食点评应用</div>
+                                <ul class="projectDetail">
+                                    <li>下拉刷新组件：通过函数节流的方法提高下拉刷新在低端机器上的稳定性，通过切换CSS弹性滚动使下拉更加逼真</li>
+                                    <li>加载动画：利用Vue数据绑定控制SVG实现"随动"动画，利用CSS animation实现"逐帧"动画</li>
+                                    <li>图片/视频加载：利用图片懒加载实现对内含400张图片的页面进行首屏优化，利用预先加载1s"全黑"视频的方法加快视频的响应速度</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="projectRow">
+                            <div class="projectCell1">
+                                <div class="projectVerticalLine"></div>
+                                <div class="projectCircle1"></div>
+                            </div>
+                            <div class="projectCell2">
+                                <a class="projectName" href="https://lark.bytedance.net/">字节跳动 Lark(PC版)</a>
+                                <div class="projectHighLightItems">
+                                    <div class="projectHighLightLine"></div>
+                                    <div class="projectHighLightItem">React</div>
+                                    <div class="projectHighLightItem">Redux</div>
+                                    <div class="projectHighLightItem">Desktop App</div>
+                                </div>
+                                <div class="projectOutline">一款基于Electron开发的即时通信软件</div>
+                                <ul class="projectDetail">
+                                    <li>图片懒加载重构：遵循低耦合，高内聚的思想，基于IntersectionObserver实现单例模型对全局图片的加载进行管理，降低与父组件的耦合，简化后续开发流程</li>
+                                    <li>模态框重构：在比较过React Portal后，选用React.render的方式，将模态框逻辑从redux中迁移出来，并通过cache对模态框的加载速度进行优化</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="projectRow">
+                            <div class="projectCell1">
+                                <div class="projectVerticalLine"></div>
+                                <div class="projectCircle1"></div>
+                            </div>
+                            <div class="projectCell2">
+                                <a class="projectName" href="https://github.com/sumAlbert/iChart">实验室 iChart</a>
+                                <div class="projectHighLightItems">
+                                    <div class="projectHighLightLine"></div>
+                                    <div class="projectHighLightItem">AngularJS 1.x</div>
+                                    <div class="projectHighLightItem">SPA</div>
+                                </div>
+                                <div class="projectOutline">一款基于AngularJS开发的在线图文编辑器</div>
+                                <ul class="projectDetail">
+                                    <li>图文编辑：利用HTML5的contenteditable,selection,range等特性对文中进行加工，利用Echart对图表进行编辑</li>
+                                    <li>上传微信：前后端利用Ajax进行跨域，利用base64对图片进行转码导入微信后台</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="projectRow">
+                            <div class="projectCell1">
+                                <!--<div class="projectVerticalLine"></div>-->
+                                <div class="projectCircle1"></div>
+                            </div>
+                            <div class="projectCell2">
+                                <a class="projectName">美团点评 旅行默契大考验</a>
+                                <div class="projectHighLightItems">
+                                    <div class="projectHighLightLine"></div>
+                                    <div class="projectHighLightItem">mpVue</div>
+                                    <div class="projectHighLightItem">微信小程序</div>
+                                </div>
+                                <div class="projectOutline">一款基于mpVue开发的旅行答题游戏</div>
+                                <ul class="projectDetail">
+                                    <li>页面布局：利用CSS3 背景径向渐变等技巧替换大量图片实现对安装包体积的压缩，利用CSS3 3D变换实现翻页效果</li>
+                                    <li>曝光埋点：通过滚动监听获取DOM位置判断是否出现在ViewPort中</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightPart-sub3">
+                <div class="rightPart-subHidden1"></div>
+                <div class="rightPart-subHidden2"></div>
+                <div class="rightPart-subHidden3"></div>
+                <div class="rightPart-subContent">
+                    <h2 class="rightPart-subTitle">专业技能</h2>
+                    <div class="skillTable">
+                        <div class="skillTable-left">
+                            页面
+                        </div>
+                        <div class="skillTable-right">
+                            <ul>
+                                <li>HTML5：标签语义化、本地存储、WebSocket、XMLHttpRequest 2 (Ajax)等有一定的理解和运用</li>
+                                <li>CSS3: 对CSS3的动态效果有深入的研究及使用，对页面布局有的深入的研究，包括BFC、IFC等</li>
+                                <li>JS: 对ES5、DOM有深入研究，对ES6有一定的使用</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skillTable">
+                        <div class="skillTable-left">
+                            工程
+                        </div>
+                        <div class="skillTable-right">
+                            <ul>
+                                <li>框架：对React、Vue、AngularJS 1.x 有一定的研究和使用</li>
+                                <li>构建工具：对Webpack有一定的研究，对gulp有一定的使用</li>
+                                <li>版本控制：利用git对版本进行控制和协作开发</li>
+                                <li>服务器：对Node（Express、Koa）和Java Servlet有一定的使用</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightPart-sub4">
+                <div class="rightPart-subHidden1"></div>
+                <div class="rightPart-subHidden2"></div>
+                <div class="rightPart-subHidden3"></div>
+                <div class="rightPart-subContent">
+                    <h2 class="rightPart-subTitle">教育背景</h2>
+                    <div class="ecnu">
+                        <div class="university-name">华东师范大学</div>
+                        <div class="university-time">2015.9 - 至今</div>
+                        <div class="university-major">本科生，软件科学与技术方向</div>
+                        <div class="university-grade">GPA：3.74/4(Top 1)</div>
+                    </div>
+                    <div class="sjtu">
+                        <div class="university-name">上海交通大学</div>
+                        <div class="university-time">2018.2 - 2018.6</div>
+                        <div class="university-major">交换生，软件工程专业</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/iconfont.js"></script>
+</html>
