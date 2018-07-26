@@ -2,7 +2,7 @@
  * @author:Albert
  */
 @headerLine: 12mm;
-@leftPartFlex:0,1,2;
+@leftPartFlex:0,.85,2;
 @leftPartNum:3;
 @rightPartFlex:0,0,0,1;
 @rightPartNum:4;
@@ -78,8 +78,8 @@ li{color: #666;}
   background: @themeColor;
 }
 .leftPart-sub2Avatar{
-  width: 36mm;
-  height: 36mm;
+  width: 34mm;
+  height: 34mm;
   border-radius: 50% 50%;
   background: url("../img/avatar.jpg") center center no-repeat,linear-gradient(white,white) center center repeat;
   background-size: contain,100% 100%;
@@ -116,9 +116,23 @@ li{color: #666;}
   justify-content: flex-start;
   align-items: center;
 }
+.leftPart-sub3-edu{
+  color: white;
+  margin: 7mm 0 0;
+  padding: 2mm 3mm;
+  font-size: 6mm;
+  letter-spacing: 1mm;
+  font-weight: bold;
+  align-self: flex-start;
+  background: @themeColor;
+}
+.leftPart-sub3-strong{
+  color: @themeColor;
+  font-weight: bold;
+}
 .leftPart-sub3-prize{
   color: white;
-  margin: 12mm 0 0;
+  margin: 2mm 0 0;
   padding: 2mm 3mm;
   font-size: 6mm;
   letter-spacing: 1mm;
@@ -128,7 +142,7 @@ li{color: #666;}
 }
 .leftPart-sub3-contact{
   color: white;
-  margin: 12mm 0 0;
+  margin: 2mm 0 0;
   padding: 2mm 3mm;
   font-size: 6mm;
   letter-spacing: 1mm;
@@ -136,12 +150,25 @@ li{color: #666;}
   align-self: flex-start;
   background: @themeColor;
 }
-.leftPart-sub3-prizeUl{
-  line-height: 2.5em;
+.leftPart-sub3-eduUl{
+  line-height: 2.4em;
+  margin: 2mm 0;
+  font-size: .9em;
   padding: 0;
+  width: 70%;
+}
+.leftPart-sub3-prizeUl{
+  line-height: 2.4em;
+  margin: 2mm 0;
+  font-size: .9em;
+  padding: 0;
+  width: 70%;
 }
 .leftPart-sub3-contactUl{
-  line-height: 2.5em;
+  line-height: 2.4em;
+  font-size: .9em;
+  width: 90%;
+  margin: 2mm 0;
   padding: 0;
 }
 .leftPart-sub3-contactUl > li{
@@ -151,6 +178,10 @@ li{color: #666;}
 .contactDetail{
   color: #666;
   text-decoration: none;
+}
+.contactDetail-under {
+  color: #666;
+  text-decoration: underline;
 }
 //右边部分
 //右边共有样式
@@ -173,7 +204,7 @@ li{color: #666;}
     width: 100%;
     background: #f9f9f9;
   }
-  .rightPart-sub@{i} when (@i = 4){
+  .rightPart-sub@{i} when (@i = 2){
     .rightPart-sub;
     flex: 1;
   }
@@ -349,6 +380,10 @@ li{color: #666;}
   padding: 0 0 0 3mm ;
   font-size: 2.5mm;
   margin: 1mm 0;
+  line-height: 1.55em;
+}
+.projectDetail-strong{
+  color: #333;
 }
 
 //专业技能
@@ -360,6 +395,9 @@ li{color: #666;}
   border: .7mm solid @themeColor;
   position: relative;
   z-index: 3;
+}
+.skillTable:nth-last-child(1) {
+  margin: 0 auto 8mm;
 }
 .skillTable-left{
   display: table-cell;
@@ -384,12 +422,17 @@ li{color: #666;}
 .skillTable-right >ul{
   padding: 0 5mm;
 }
+.skillTable-strong{
+  color: #333;
+}
 
 //教育背景
 .ecnu{
+  margin: -3mm 0 0;
   position: absolute;
 }
 .sjtu{
+  margin: -3mm 0 0;
   position: absolute;
   left: 50%;
 }
@@ -402,12 +445,12 @@ li{color: #666;}
 .university-time{
   color: darken(@themeColor,20%);
   font-size: 3.5mm;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 .university-major{
   color: #666;
   font-size: 4mm;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 .university-grade{
   .university-major;
