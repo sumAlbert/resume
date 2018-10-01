@@ -37,7 +37,7 @@
                     <li>"大夏杯"创业计划大赛<br>三等奖</li>
                     <li>校优秀学生<br>校优秀学生干部</li>
                 </ul>
-                <div class="leftPart-sub3-contact">联系方式</div>
+                <div class="leftPart-sub3-prize">联系方式</div>
                 <ul class="leftPart-sub3-contactUl">
                     <li>
                         <svg class="icon" aria-hidden="true">
@@ -79,6 +79,7 @@
                         <div class="university-name">今日头条</div>
                         <div class="university-time">2018.7 - 至今</div>
                         <div class="university-major">Lark重构和性能优化</div>
+                        <div class="university-grade">群收藏列表开发</div>
                     </div>
                 </div>
             </div>
@@ -89,6 +90,26 @@
                 <div class="rightPart-subContent">
                     <h2 class="rightPart-subTitle">项目经历</h2>
                     <div class="projectTable">
+                        <div class="projectRow">
+                            <div class="projectCell1">
+                                <div class="projectVerticalLine"></div>
+                                <div class="projectCircle1"></div>
+                            </div>
+                            <div class="projectCell2">
+                                <a class="projectName" href="https://lark.bytedance.net/">字节跳动 Lark(PC版)</a>
+                                <div class="projectHighLightItems">
+                                    <div class="projectHighLightLine"></div>
+                                    <div class="projectHighLightItem">React</div>
+                                    <div class="projectHighLightItem">Redux</div>
+                                    <div class="projectHighLightItem">Desktop App</div>
+                                </div>
+                                <div class="projectOutline">一款基于Electron开发的即时通信软件</div>
+                                <ul class="projectDetail">
+                                    <li><span class="projectDetail-strong">群收藏列表</span>：通过对消息列表添加一层"活动窗口"，维持消息列表数量的相对稳定，避免列表过长导致卡顿。并通过控制scrollTop, 提高上下翻屏的流畅度</li>
+                                    <li><span class="projectDetail-strong">模态框重构</span>：基于React Portal，将模态框逻辑从redux中迁移出来。并基于MVVM的思想，使得模态框在数据层面上实现分组，而在虚拟DOM中相对扁平</li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="projectRow">
                             <div class="projectCell1">
                                 <div class="projectVerticalLine"></div>
@@ -117,26 +138,6 @@
                                 <div class="projectCircle1"></div>
                             </div>
                             <div class="projectCell2">
-                                <a class="projectName" href="https://lark.bytedance.net/">字节跳动 Lark(PC版)</a>
-                                <div class="projectHighLightItems">
-                                    <div class="projectHighLightLine"></div>
-                                    <div class="projectHighLightItem">React</div>
-                                    <div class="projectHighLightItem">Redux</div>
-                                    <div class="projectHighLightItem">Desktop App</div>
-                                </div>
-                                <div class="projectOutline">一款基于Electron开发的即时通信软件</div>
-                                <ul class="projectDetail">
-                                    <li><span class="projectDetail-strong">图片懒加载重构</span>：遵循低耦合，高内聚的思想，基于IntersectionObserver实现单例模式，对全局图片的加载进行管理，降低与父组件的耦合，简化后续开发流程</li>
-                                    <li><span class="projectDetail-strong">模态框重构</span>：在比较过React Portal后，选用React.render的方式，将模态框逻辑从redux中迁移出来，并通过cache对模态框的加载速度进行优化</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="projectRow">
-                            <div class="projectCell1">
-                                <div class="projectVerticalLine"></div>
-                                <div class="projectCircle1"></div>
-                            </div>
-                            <div class="projectCell2">
                                 <a class="projectName" href="https://github.com/sumAlbert/iChart">实验室 iChart</a>
                                 <div class="projectHighLightItems">
                                     <div class="projectHighLightLine"></div>
@@ -145,7 +146,7 @@
                                 </div>
                                 <div class="projectOutline">一款基于AngularJS开发的在线图文编辑器</div>
                                 <ul class="projectDetail">
-                                    <li><span class="projectDetail-strong">图文编辑</span>：利用HTML5的contenteditable,selection,range等特性对文中进行加工，利用Echart对图表进行编辑</li>
+                                    <li><span class="projectDetail-strong">图文编辑</span>：利用HTML5的contenteditable,selection,range等特性对文本进行加工，利用Echart对图表进行编辑</li>
                                     <li><span class="projectDetail-strong">上传微信</span>：前后端利用Ajax进行跨域，利用base64对图片进行转码导入微信后台</li>
                                 </ul>
                             </div>
@@ -199,7 +200,7 @@
                                 <li><span class="skillTable-strong">框架：</span>对React、Vue、AngularJS 1.x 有一定的研究和使用</li>
                                 <li><span class="skillTable-strong">构建工具：</span>对Webpack有一定的研究，对gulp有一定的使用</li>
                                 <li><span class="skillTable-strong">版本控制：</span>利用git对版本进行控制和协作开发</li>
-                                <li><span class="skillTable-strong">服务器：</span>对Express和Java Servlet有一定的使用</li>
+                                <li><span class="skillTable-strong">服务器：</span>对Express和Java Servlet有简单的使用</li>
                             </ul>
                         </div>
                     </div>

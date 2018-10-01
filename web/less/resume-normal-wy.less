@@ -81,7 +81,7 @@ li{color: #666;}
   width: 34mm;
   height: 34mm;
   border-radius: 50% 50%;
-  background: url("../img/avatar.jpg") center center no-repeat,linear-gradient(white,white) center center repeat;
+  background: url("../img/avatar-wy-new.png") center center no-repeat,linear-gradient(white,white) center center repeat;
   background-size: contain,100% 100%;
 }
 .leftPart-sub2Name{
@@ -120,7 +120,7 @@ li{color: #666;}
   color: white;
   margin: 7mm 0 0;
   padding: 2mm 3mm;
-  font-size: 5.8mm;
+  font-size: 6mm;
   letter-spacing: 1mm;
   font-weight: bold;
   align-self: flex-start;
@@ -134,7 +134,7 @@ li{color: #666;}
   color: white;
   margin: 2mm 0 0;
   padding: 2mm 3mm;
-  font-size: 5.8mm;
+  font-size: 6mm;
   letter-spacing: 1mm;
   font-weight: bold;
   align-self: flex-start;
@@ -144,7 +144,7 @@ li{color: #666;}
   color: white;
   margin: 2mm 0 0;
   padding: 2mm 3mm;
-  font-size: 5.8mm;
+  font-size: 6mm;
   letter-spacing: 1mm;
   font-weight: bold;
   align-self: flex-start;
@@ -167,8 +167,8 @@ li{color: #666;}
 .leftPart-sub3-contactUl{
   line-height: 2.4em;
   font-size: .9em;
-  width: 90%;
-  margin: 2mm 0;
+  width: 85%;
+  margin: 2mm 1mm;
   padding: 0;
 }
 .leftPart-sub3-contactUl > li{
@@ -291,6 +291,8 @@ li{color: #666;}
 }
 .rightPart-subTitle{
   color: @themeColor;
+  position: relative;
+  top: .5mm;
 }
 .rightPart-subTitle::after{
   display: block;
@@ -380,7 +382,7 @@ li{color: #666;}
   padding: 0 0 0 3mm ;
   font-size: 2.5mm;
   margin: 1mm 0;
-  line-height: 1.55em;
+  line-height: 1.75em;
 }
 .projectDetail-strong{
   color: #333;
@@ -403,7 +405,7 @@ li{color: #666;}
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  width: 15mm;
+  width: 20mm;
   height: 10mm;
   background: @themeColor;
   color: #f9f9f9;
@@ -440,16 +442,20 @@ li{color: #666;}
   color: @themeColor;
   font-size: 5mm;
   font-weight: bold;
-  line-height: 2em;
+  line-height: 2.1em;
+  position: relative;
+  top: -.2mm;
 }
 .university-time{
-  color: darken(@themeColor,20%);
+  color: @themeColor;
   font-size: 3.5mm;
   line-height: 1.5em;
 }
 .university-major{
   color: #666;
   font-size: 4mm;
+  position: relative;
+  z-index: 100;
   line-height: 1.5em;
 }
 .university-grade{
